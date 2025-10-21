@@ -1,6 +1,42 @@
-[gd_scene load_steps=11 format=3 uid="uid://qvlqfjw3dvl4"]
+[gd_scene load_steps=37 format=3 uid="uid://qvlqfjw3dvl4"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_e5uuo"]
+[ext_resource type="PackedScene" uid="uid://hj5mcfaqee70" path="res://scenes/car.tscn" id="1_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://1x7pofu5x4f" path="res://models/parliament.blend" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://bmendoiga4a7s" path="res://models/stadium.blend" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dep3ug3f4yi8k" path="res://models/veterans.blend" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://x7le3kiw3yij" path="res://scenes/bus.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://cw737iirbfbib" path="res://models/tatik-papik.blend" id="6_qfnet"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wyf3"]
+
+[sub_resource type="Sky" id="Sky_k0juu"]
+sky_material = SubResource("ProceduralSkyMaterial_4wyf3")
+
+[sub_resource type="Environment" id="Environment_4wyf3"]
+background_mode = 2
+sky = SubResource("Sky_k0juu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwgxs"]
+albedo_color = Color(0.65098, 0.65098, 0.65098, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4wyf3"]
+material = SubResource("StandardMaterial3D_rwgxs")
+size = Vector2(128, 16)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qfnet"]
+points = PackedVector3Array(-52, 0, -8, -52, 0, 8, 52, 0, -8, 52, 0, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0juu"]
+albedo_color = Color(0, 0.6, 0.2, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_71j4m"]
+material = SubResource("StandardMaterial3D_k0juu")
+top_radius = 3.0
+bottom_radius = 3.0
+height = 0.2
+radial_segments = 8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5uuo"]
 albedo_color = Color(0.65098, 0.65098, 0.65098, 1)
@@ -9,154 +45,294 @@ albedo_color = Color(0.65098, 0.65098, 0.65098, 1)
 material = SubResource("StandardMaterial3D_e5uuo")
 size = Vector2(8, 128)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnsk1"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rwgxs"]
+data = PackedVector3Array(4, 0, 52, -4, 0, 52, 4, 0, -52, -4, 0, 52, -4, 0, -52, 4, 0, -52)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4wyf3"]
+data = PackedVector3Array(4, 0, 52, -4, 0, 52, 4, 0, -52, -4, 0, 52, -4, 0, -52, 4, 0, -52)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4mrxx"]
+points = PackedVector3Array(4, 0, 64, -4, 0, 64, 4, 0, -64, -4, 0, -64)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_71j4m"]
+data = PackedVector3Array(4, 0, 52, -4, 0, 52, 4, 0, -52, -4, 0, 52, -4, 0, -52, 4, 0, -52)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qfnet"]
+data = PackedVector3Array(4, 0, 52, -4, 0, 52, 4, 0, -52, -4, 0, 52, -4, 0, -52, 4, 0, -52)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
 albedo_color = Color(0.65098, 0.65098, 0.65098, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_e5uuo"]
-material = SubResource("StandardMaterial3D_nnsk1")
-size = Vector2(16, 8)
+[sub_resource type="PlaneMesh" id="PlaneMesh_i7141"]
+material = SubResource("StandardMaterial3D_qfnet")
+size = Vector2(8, 32)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwgxs"]
-albedo_color = Color(0.65098, 0.65098, 0.65098, 1)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e3hyu"]
+points = PackedVector3Array(4, 0, 12, -4, 0, 12, 4, 0, -12, -4, 0, -12)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4wyf3"]
-material = SubResource("StandardMaterial3D_rwgxs")
-size = Vector2(40, 32)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7r4gi"]
+points = PackedVector3Array(-52, 0, -8, -52, 0, 8, 52, 0, -8, 52, 0, 8)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_71j4m"]
-top_radius = 8.0
-bottom_radius = 8.0
-radial_segments = 8
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3hyu"]
+albedo_color = Color(0.8, 0.6, 0.4, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wyf3"]
-albedo_color = Color(0.65098, 0.65098, 0.65098, 1)
+[sub_resource type="PlaneMesh" id="PlaneMesh_w7kh3"]
+material = SubResource("StandardMaterial3D_e3hyu")
+size = Vector2(112, 128)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_k0juu"]
-material = SubResource("StandardMaterial3D_4wyf3")
-size = Vector2(80, 8)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jhx03"]
+points = PackedVector3Array(56, 0, 64, -56, 0, 64, 56, 0, -64, -56, 0, -64)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q5onr"]
+size = Vector2(112, 8)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7r4gi"]
+data = PackedVector3Array(4, 0, 52, -4, 0, 52, 4, 0, -52, -4, 0, 52, -4, 0, -52, 4, 0, -52)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7141"]
+albedo_color = Color(0, 0.6, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4mrxx"]
+material = SubResource("StandardMaterial3D_i7141")
+size = Vector3(1, 0.2, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qfnet"]
+size = Vector3(32, 0.1, 32)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i7141"]
+points = PackedVector3Array(-16, -0.05, -16, -16, 0.05, -16, 16, -0.05, -16, -16, -0.05, 16, -16, 0.05, 16, 16, 0.05, -16, 16, -0.05, 16, 16, 0.05, 16)
+
+[sub_resource type="Curve3D" id="Curve3D_qfnet"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 104, -0.1, 8, 0, 0, 0, 0, 0, 0, 104, -0.1, 16, 0, 0, 0, 0, 0, 0, 104, 49.95, 128, 0, 0, 0, 0, 0, 0, 104, 49.95, 136),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e5uuo"]
 
 [node name="World" type="Node3D"]
 
-[node name="Person" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44493, 0.964054, -7.66018)
-mesh = SubResource("CapsuleMesh_e5uuo")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4wyf3")
 
-[node name="Roads" type="Node" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.173648, -0.696365, 0.696365, 0, 0.707107, 0.707107, -0.984808, -0.122788, 0.122788, 0, 30, 0)
+shadow_enabled = true
 
-[node name="Downtown" type="Node" parent="Roads"]
+[node name="Stepanakert" type="Node" parent="."]
 
-[node name="LongRoad" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -64)
-mesh = SubResource("PlaneMesh_nnsk1")
-skeleton = NodePath("../../..")
+[node name="Downtown" type="Node" parent="Stepanakert"]
 
-[node name="LongRoad2" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -64)
-mesh = SubResource("PlaneMesh_nnsk1")
-skeleton = NodePath("../../..")
+[node name="Roads" type="Node" parent="Stepanakert/Downtown"]
 
-[node name="LongRoad3" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, -64)
-mesh = SubResource("PlaneMesh_nnsk1")
-skeleton = NodePath("../../..")
-
-[node name="LongRoad4" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 0, -64)
-mesh = SubResource("PlaneMesh_nnsk1")
-skeleton = NodePath("../../..")
-
-[node name="LongRoad5" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, -64)
-mesh = SubResource("PlaneMesh_nnsk1")
-skeleton = NodePath("../../..")
-
-[node name="LongRoad6" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 0, -64)
-mesh = SubResource("PlaneMesh_nnsk1")
-skeleton = NodePath("../../..")
-
-[node name="LongRoad7" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 64, 0, 4)
-mesh = SubResource("PlaneMesh_nnsk1")
-skeleton = NodePath("../../..")
-
-[node name="LongRoad8" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40, 0, -132)
-mesh = SubResource("PlaneMesh_nnsk1")
-skeleton = NodePath("../../..")
-
-[node name="SmallRoad" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -36)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad2" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -68)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad3" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -100)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad4" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -100)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad5" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -68)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad6" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -36)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad7" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -36)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad8" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -68)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad9" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -100)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad10" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0, -100)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad11" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0, -68)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad12" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0, -36)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad13" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, -36)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad14" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, -68)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="SmallRoad15" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, -100)
-mesh = SubResource("PlaneMesh_e5uuo")
-
-[node name="RoundaboutBase" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 0, -144)
+[node name="Avenue" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -136)
 mesh = SubResource("PlaneMesh_4wyf3")
 skeleton = NodePath("")
 
-[node name="RoundaboutIsland" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 1, -144)
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/Downtown/Roads/Avenue"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/Downtown/Roads/Avenue/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qfnet")
+
+[node name="Avenue2" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -136)
+mesh = SubResource("PlaneMesh_4wyf3")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/Downtown/Roads/Avenue2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/Downtown/Roads/Avenue2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qfnet")
+
+[node name="Roundabout" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.318, 0.1, -135.579)
 mesh = SubResource("CylinderMesh_71j4m")
 skeleton = NodePath("")
 
-[node name="MediumRoad" type="MeshInstance3D" parent="Roads/Downtown"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -140)
-mesh = SubResource("PlaneMesh_k0juu")
+[node name="LongRoad" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -64)
+mesh = SubResource("PlaneMesh_nnsk1")
+skeleton = NodePath("../../../..")
 
-[node name="Ground" type="Node" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/Downtown/Roads/LongRoad"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/Downtown/Roads/LongRoad/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rwgxs")
+
+[node name="LongRoad2" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, -64)
+mesh = SubResource("PlaneMesh_nnsk1")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/Downtown/Roads/LongRoad2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/Downtown/Roads/LongRoad2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4wyf3")
+
+[node name="LongRoad3" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -64)
+mesh = SubResource("PlaneMesh_nnsk1")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/Downtown/Roads/LongRoad3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/Downtown/Roads/LongRoad3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4mrxx")
+
+[node name="LongRoad4" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 0, -64)
+mesh = SubResource("PlaneMesh_nnsk1")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/Downtown/Roads/LongRoad4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/Downtown/Roads/LongRoad4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_71j4m")
+
+[node name="LongRoad5" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 64, 0, 4)
+mesh = SubResource("PlaneMesh_nnsk1")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/Downtown/Roads/LongRoad5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/Downtown/Roads/LongRoad5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qfnet")
+
+[node name="ShortRoad" type="MeshInstance3D" parent="Stepanakert/Downtown/Roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24, 0, -68)
+mesh = SubResource("PlaneMesh_i7141")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/Downtown/Roads/ShortRoad"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/Downtown/Roads/ShortRoad/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_e3hyu")
+
+[node name="Buildings" type="Node" parent="Stepanakert/Downtown"]
+
+[node name="Parliament" parent="Stepanakert/Downtown/Buildings" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -147.956)
+
+[node name="Veterans" parent="Stepanakert/Downtown/Buildings" instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.4005, 0, -155.864)
+
+[node name="StadiumDistrict" type="Node" parent="Stepanakert"]
+
+[node name="LongRoad" type="MeshInstance3D" parent="Stepanakert/StadiumDistrict"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -208)
+mesh = SubResource("PlaneMesh_nnsk1")
+skeleton = NodePath("../../..")
+
+[node name="Avenue" type="MeshInstance3D" parent="Stepanakert/StadiumDistrict"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 128, 0, -208)
+mesh = SubResource("PlaneMesh_4wyf3")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/StadiumDistrict/Avenue"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/StadiumDistrict/Avenue/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_7r4gi")
+
+[node name="Stadium" parent="Stepanakert/StadiumDistrict" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 68, 0.1, -236.032)
+
+[node name="Valley" type="MeshInstance3D" parent="Stepanakert/StadiumDistrict"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -208)
+mesh = SubResource("PlaneMesh_w7kh3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/StadiumDistrict/Valley"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/StadiumDistrict/Valley/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_jhx03")
+
+[node name="Nexus" type="MeshInstance3D" parent="Stepanakert/StadiumDistrict"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -276)
+mesh = SubResource("PlaneMesh_q5onr")
+
+[node name="North" type="Node" parent="Stepanakert"]
+
+[node name="Nexus" type="MeshInstance3D" parent="Stepanakert/North"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -396)
+mesh = SubResource("PlaneMesh_q5onr")
+skeleton = NodePath("../../StadiumDistrict")
+
+[node name="Roundabout" type="MeshInstance3D" parent="Stepanakert/North"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -396)
+mesh = SubResource("CylinderMesh_71j4m")
+skeleton = NodePath("")
+
+[node name="Avenue3" type="MeshInstance3D" parent="Stepanakert/North"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 128, 0, -336)
+mesh = SubResource("PlaneMesh_4wyf3")
+skeleton = NodePath("")
+
+[node name="Avenue4" type="MeshInstance3D" parent="Stepanakert/North"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 128, 0, -464)
+mesh = SubResource("PlaneMesh_4wyf3")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/North/Avenue4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/North/Avenue4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_7r4gi")
+
+[node name="LongRoad2" type="MeshInstance3D" parent="Stepanakert/North"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -336)
+mesh = SubResource("PlaneMesh_nnsk1")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stepanakert/North/LongRoad2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stepanakert/North/LongRoad2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7r4gi")
+
+[node name="MedianIsland" type="MeshInstance3D" parent="Stepanakert/North"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -416)
+mesh = SubResource("BoxMesh_4mrxx")
+skeleton = NodePath("")
+
+[node name="Tatik-Papik" parent="Stepanakert/North" instance=ExtResource("6_qfnet")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 74, 0, -500)
+
+[node name="Shushi" type="Node" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="Shushi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 50, 152)
+mesh = SubResource("BoxMesh_qfnet")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shushi/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shushi/Ground/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_i7141")
+
+[node name="Freeway" type="Path3D" parent="Shushi"]
+curve = SubResource("Curve3D_qfnet")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Shushi/Freeway"]
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 0.1, 8, 0.1, 8, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Person" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41355, 1, -117.014)
+mesh = SubResource("CapsuleMesh_e5uuo")
+
+[node name="Bus" parent="." instance=ExtResource("5_71j4m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 52, 158.563)
+
+[node name="Car" parent="." instance=ExtResource("1_4wyf3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 84.3335, 54.7431, 152.991)
